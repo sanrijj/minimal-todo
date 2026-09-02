@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>极简待办 · Todo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="app">
+        <header class="app-header">
+            <h1 class="app-title">待办事项</h1>
+            <p class="app-subtitle" id="summary">今天也要加油呀</p>
+        </header>
+
+        <section class="card">
+            <form class="input-row" id="todo-form" autocomplete="off">
+                <input
+                    type="text"
+                    id="todo-input"
+                    class="todo-input"
+                    placeholder="添加一个新任务…"
+                    maxlength="200"
+                    aria-label="新待办内容"
+                    required
+                >
+                <button type="submit" class="btn-add" aria-label="添加待办">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                    <span>添加</span>
+                </button>
+            </form>
+
+            <ul class="todo-list" id="todo-list" role="list"></ul>
+
+            <div class="empty-state" id="empty-state">
+                <div class="empty-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 11l3 3L22 4"></path>
+                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                    </svg>
+                </div>
+                <p class="empty-text">还没有待办事项</p>
+                <p class="empty-hint">在上方输入框添加你的第一个任务吧</p>
+            </div>
+        </section>
+
+        <footer class="app-footer">
+            <span id="counter">共 0 项 · 已完成 0 项</span>
+            <button class="btn-clear" id="btn-clear-completed" type="button" hidden>清除已完成</button>
+        </footer>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
